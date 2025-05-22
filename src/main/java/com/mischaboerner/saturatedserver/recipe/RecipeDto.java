@@ -2,12 +2,23 @@ package com.mischaboerner.saturatedserver.recipe;
 
 import java.util.List;
 import com.mischaboerner.saturatedserver.ingredient.IngredientDto;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class RecipeDto {
+	@NotBlank(message = "Title can't be empty")
+	@Size(max = 100, message = "Title isn't allowed to be longer than 100 characters.")
 	private String title;
+
+	@NotBlank(message = "Description can't be empty")
+	@Size(max = 1000, message = "Description isn't allowed to be longer than 1000 characters.")
 	private String description;
+
+	@Size(min = 1, message = "There has to be at least one ingredient.")
 	private List<IngredientDto> ingredients;
-	private List<String> instructionSteps;
+
+	@Size(min = 1, message = "There has to be at least one instruction step.")
+	private List<@NotBlank(message = "Instruction step can't be empty.") String> instructionSteps;
 
 	public RecipeDto() {
 	}

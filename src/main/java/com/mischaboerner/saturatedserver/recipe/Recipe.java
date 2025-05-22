@@ -13,11 +13,7 @@ public class Recipe {
 	@GeneratedValue
 	private Long id;
 
-	@NotBlank(message = "Title can't be empty")
-	@Size(max = 100, message = "Title isn't allowed to be longer than 100 characters.")
 	private String title;
-
-	@Size(max = 1000, message = "Description isn't allowed to be longer than 1000 characters.")
 	private String description;
 
 	@ElementCollection
@@ -34,8 +30,7 @@ public class Recipe {
 			joinColumns = @JoinColumn(name = "recipe_id")
 	)
 	@Column(name = "step")
-	@Size(min = 1)
-	private List<@NotBlank String> instructionSteps;
+	private List<String> instructionSteps;
 
 	public Recipe() {
 
