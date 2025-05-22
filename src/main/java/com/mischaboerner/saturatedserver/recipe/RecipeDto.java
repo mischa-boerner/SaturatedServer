@@ -4,21 +4,26 @@ import java.util.List;
 import com.mischaboerner.saturatedserver.ingredient.IngredientDto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class RecipeDto {
+	@NotNull(message = "Title can't be null")
 	@NotBlank(message = "Title can't be empty")
 	@Size(max = 100, message = "Title isn't allowed to be longer than 100 characters.")
 	private String title;
 
+	@NotNull(message = "Description can't be null.")
 	@NotBlank(message = "Description can't be empty")
 	@Size(max = 1000, message = "Description isn't allowed to be longer than 1000 characters.")
 	private String description;
 
+	@NotNull(message = "Ingredient List can't be null")
 	@Size(min = 1, message = "There has to be at least one ingredient.")
 	@Valid
 	private List<IngredientDto> ingredients;
 
+	@NotNull(message = "Instruction Steps can't be null.")
 	@Size(min = 1, message = "There has to be at least one instruction step.")
 	private List<@NotBlank(message = "Instruction step can't be empty.") String> instructionSteps;
 

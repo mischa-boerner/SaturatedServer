@@ -4,12 +4,16 @@ import java.math.BigDecimal;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 public class IngredientDto {
 
+	@NotNull(message = "Ingredient name can't be null.")
 	@NotBlank(message = "Ingredient name can't be empty.")
+	@Size(max = 100, message = "Title can't be longer than 100 characters.")
 	private String name;
 
+	@NotNull(message = "Amount can't be null")
 	@DecimalMin(value = "0.0", inclusive = false, message = "Amount has to be greater than 0")
 	private BigDecimal amount;
 
