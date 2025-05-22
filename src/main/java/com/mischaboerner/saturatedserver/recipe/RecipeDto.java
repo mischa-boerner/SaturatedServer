@@ -2,6 +2,7 @@ package com.mischaboerner.saturatedserver.recipe;
 
 import java.util.List;
 import com.mischaboerner.saturatedserver.ingredient.IngredientDto;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -15,6 +16,7 @@ public class RecipeDto {
 	private String description;
 
 	@Size(min = 1, message = "There has to be at least one ingredient.")
+	@Valid
 	private List<IngredientDto> ingredients;
 
 	@Size(min = 1, message = "There has to be at least one instruction step.")

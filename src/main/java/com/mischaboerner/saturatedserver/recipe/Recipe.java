@@ -21,7 +21,6 @@ public class Recipe {
 			name = "recipe_ingredients",
 			joinColumns = @JoinColumn(name = "recipe_id")
 	)
-	@Valid
 	private List<Ingredient> ingredients;
 
 	@ElementCollection

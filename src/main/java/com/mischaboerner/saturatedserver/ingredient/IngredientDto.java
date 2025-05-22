@@ -1,10 +1,20 @@
 package com.mischaboerner.saturatedserver.ingredient;
 
 import java.math.BigDecimal;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class IngredientDto {
+
+	@NotBlank(message = "Ingredient name can't be empty.")
 	private String name;
+
+	@DecimalMin(value = "0.0", inclusive = false, message = "Amount has to be greater than 0")
 	private BigDecimal amount;
+
+	@NotNull(message = "Unit can't be null")
+	@NotBlank(message = "Unit can't be empty")
 	private String unit;
 
 	public IngredientDto() {

@@ -7,13 +7,9 @@ import jakarta.validation.constraints.*;
 @Embeddable
 public class Ingredient {
 
-	@NotBlank
 	private String name;
-
-	@DecimalMin(value = "0.0", inclusive = false, message = "Must be > 0")
 	private BigDecimal amount;
 
-	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Unit unit;
 
