@@ -2,7 +2,6 @@ package com.mischaboerner.saturatedserver.account;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +20,7 @@ public class UserAccountController {
 		this.mapper = mapper;
 	}
 
-	@PostMapping
+	@PostMapping("/create")
 	public UserAccountDto create(@Valid @RequestBody UserAccountDto dto) {
 		PasswordService passwordService = new PasswordService();
 		dto.setHashedPassword(passwordService.hashPassword(dto.getHashedPassword()));

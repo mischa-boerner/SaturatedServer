@@ -13,7 +13,7 @@ public class SecurityConfig {
 		//TODO: tokenbasierte Authentifizierung, z.B. mit JWT
 		http.csrf().disable()
 			.authorizeHttpRequests(auth -> auth
-					.requestMatchers(HttpMethod.POST, "/users").permitAll()
+					.requestMatchers(HttpMethod.POST, "/users/create").permitAll()
 					.anyRequest().authenticated()
 			);
 		return http.build();
