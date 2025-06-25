@@ -1,5 +1,6 @@
 package com.mischaboerner.saturatedserver.account;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -10,6 +11,7 @@ public class UserAccount {
 	@GeneratedValue
 	private Long id;
 
+	@Column(unique = true, nullable = false)
 	private String email;
 
 	private String hashedPassword;

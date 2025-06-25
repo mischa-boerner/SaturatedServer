@@ -22,8 +22,13 @@ public class UserAccountController {
 
 	@PostMapping("/create")
 	public UserAccountDto create(@Valid @RequestBody UserAccountDto dto) {
+		if (repository.existsByEmail(dto.getEmail())) {
+			throw new IllegalArgumentException("Diese E-Mail-Adresse wird bereits verwendet.");
+		}
+
 		PasswordService passwordService = new PasswordService();
 		dto.setHashedPassword(passwordService.hashPassword(dto.getHashedPassword()));
+
 		UserAccount saved = repository.save(mapper.toEntity(dto));
 		return mapper.toDto(saved);
 	}
