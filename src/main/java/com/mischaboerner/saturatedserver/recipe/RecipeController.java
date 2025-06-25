@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.mischaboerner.saturatedserver.ingredient.Ingredient;
-import com.mischaboerner.saturatedserver.ingredient.Unit;
+import com.mischaboerner.saturatedserver.recipe.ingredient.Ingredient;
+import com.mischaboerner.saturatedserver.recipe.ingredient.Unit;
 import jakarta.validation.Valid;
 
 @RestController

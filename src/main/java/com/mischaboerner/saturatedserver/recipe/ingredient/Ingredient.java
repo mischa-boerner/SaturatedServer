@@ -1,8 +1,7 @@
-package com.mischaboerner.saturatedserver.ingredient;
+package com.mischaboerner.saturatedserver.recipe.ingredient;
 
 import java.math.BigDecimal;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 
 @Embeddable
 public class Ingredient {

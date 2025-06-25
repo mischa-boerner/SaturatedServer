@@ -1,4 +1,4 @@
-package com.mischaboerner.saturatedserver.ingredient;
+package com.mischaboerner.saturatedserver.recipe.ingredient;
 
 public enum Unit {
 	GRAM,

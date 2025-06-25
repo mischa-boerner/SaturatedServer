@@ -1,7 +1,7 @@
 package com.mischaboerner.saturatedserver.recipe;
 
 import java.util.List;
-import com.mischaboerner.saturatedserver.ingredient.IngredientDto;
+import com.mischaboerner.saturatedserver.recipe.ingredient.IngredientDto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
