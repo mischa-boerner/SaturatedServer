@@ -2,6 +2,7 @@ package com.mischaboerner.saturatedserver.recipe;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.mischaboerner.saturatedserver.account.UserAccount;
 import com.mischaboerner.saturatedserver.ingredient.Ingredient;
 import jakarta.persistence.*;
 import jakarta.validation.*;

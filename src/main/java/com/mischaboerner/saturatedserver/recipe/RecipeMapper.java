@@ -1,8 +1,6 @@
 // Mapper-Interface mit MapStruct
-package com.mischaboerner.saturatedserver.mapper;
+package com.mischaboerner.saturatedserver.recipe;
 
-import com.mischaboerner.saturatedserver.recipe.Recipe;
-import com.mischaboerner.saturatedserver.recipe.RecipeDto;
 import org.mapstruct.*;
 import java.util.List;
 

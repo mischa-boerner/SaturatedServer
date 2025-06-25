@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.mischaboerner.saturatedserver.ingredient.Ingredient;
 import com.mischaboerner.saturatedserver.ingredient.Unit;
-import com.mischaboerner.saturatedserver.mapper.RecipeMapper;
 import jakarta.validation.Valid;
 
 @RestController
